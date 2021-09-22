@@ -1,0 +1,10 @@
+.loading_container{
+    width: 100%;
+    height: max-content;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    background-color: rgba(255, 228, 196, 0.959);
+}
