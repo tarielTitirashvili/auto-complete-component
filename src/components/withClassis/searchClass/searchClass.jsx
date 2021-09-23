@@ -19,8 +19,8 @@ class Search extends React.Component{
     render(){
         return(
             <div className = {css.container} style = {{"height": window.innerHeight}}>
-            <h1> Search with Classes </h1>
-            <div>
+            <h1 className = {css.title}> Search with Classes </h1>
+            <div className = {css.searcher_container}>
                 <input 
                     className = {css.search_input} 
                     type="text" 
@@ -32,7 +32,7 @@ class Search extends React.Component{
                     onChange = {(e)=> this.props.setText(e.target.value)} 
                     placeholder = "what you looking for" 
                 />
-                <div className = {css.hint_container} style = {{display : this.state.focus? "block":"none"}} >
+                <div className = {css.hint_container} style = {{display : this.state.focus? "inline":"none"}} >
                     {this.props.loading? <Loading />
                         : this.props.info.map(e=>{
                           return <HintClass 

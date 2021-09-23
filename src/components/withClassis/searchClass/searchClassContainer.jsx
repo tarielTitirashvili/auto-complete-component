@@ -28,6 +28,22 @@ class SearchClassContainer extends React.Component  {
         })
     }
 
+    componentDidMount(){
+        getDataAPI(this.state.text).then((e)=>{
+            this.setState((state) => {
+                return {
+                    info: [],
+                }
+            })
+            this.setState((state) => {
+                return {
+                    info: e,
+                    loading: false
+                }
+            })
+        })
+    }
+
     componentDidUpdate(prevProps, prevState){
         if(prevState.text !== this.state.text){
             this.setState((state) => {

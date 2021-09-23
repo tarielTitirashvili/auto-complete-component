@@ -12,8 +12,8 @@ export default function SearchInput(props){
     
     return(
         <div className = {css.container} style = {{"height": window.innerHeight}}>
-            <h1> search with hooks </h1>
-            <div>
+            <h1 className = {css.title}> search with hooks </h1>
+            <div className = {css.searcher_container} >
                 <input 
                     className = {css.search_input} 
                     type="text" 
@@ -25,7 +25,7 @@ export default function SearchInput(props){
                     onChange = {(e)=>onchange(e)} 
                     placeholder = "what you looking for" 
                 />
-                <div className = {css.hint_container} style = {{display : focus? "block":"none"}} >
+                <div style = {{display : focus? "inline":"none"}} className = {css.hint_container}>
                     {props.loading? <Loading />
                     : props.info.map(e=>{
                         return <Hint 
